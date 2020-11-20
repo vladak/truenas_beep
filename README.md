@@ -13,7 +13,7 @@
 
 ## Alerting for ZFS via shell script (done)
 
-Create a simple script to play a melody (spkr(4) has detailed guide how to play the device) whenever a resource fails (e.g. ZFS pool health).
+Create a simple script to play a melody ([spkr(4)](https://www.freebsd.org/cgi/man.cgi?query=spkr&apropos=0&sektion=0&manpath=FreeBSD+12.2-RELEASE+and+Ports&arch=default&format=html) has detailed guide how to play the device) whenever a resource fails (e.g. ZFS pool health).
 
 Add a cron job (via UI) to run the script as `root` (for write access to the `/dev/speaker` device - no need in this case to complicate this with delegating privileges to non-root user via `devfs`) once every hour
 
