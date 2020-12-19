@@ -11,7 +11,7 @@
 1. ensure the speaker module is loaded on every boot: `echo 'speaker_load="YES"' >> /boot/loader.conf`
 1. peruse `/usr/sbin/spkrtest` (shell script) can be used to test the speaker
 
-## Alerting for ZFS via shell script (done)
+## Alerting for ZFS via shell script
 
 Create a simple script to play a melody ([spkr(4)](https://www.freebsd.org/cgi/man.cgi?query=spkr&apropos=0&sektion=0&manpath=FreeBSD+12.2-RELEASE+and+Ports&arch=default&format=html) has detailed guide how to play the device) whenever a resource fails (e.g. ZFS pool health).
 
@@ -44,5 +44,5 @@ It is possible to get list of alerts via the RESTful API (https://www.truenas.co
 ```
 3. use the token:
 ```
-   ./beep.py --token <INSERT_TOKEN_VALUE> --url https://NAS
+   sudo ./beep.py --token <INSERT_TOKEN_VALUE> --url https://NAS
 ```
