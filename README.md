@@ -32,3 +32,5 @@ It is possible to get list of alerts via the RESTful API (https://www.truenas.co
 ```
    sudo ./beep.py --token <INSERT_TOKEN_VALUE> --url https://NAS
 ```
+
+It would be much more convenient if the speaker could be listed as a Alert service in the TrueNAS GUI. Filed https://jira.ixsystems.com/browse/NAS-108740 to track this enhancement.
