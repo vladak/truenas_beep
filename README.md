@@ -36,6 +36,12 @@ done
 It is possible to get list of alerts via the RESTful API (https://www.truenas.com/docs/hub/additional-topics/api/rest_api/).
 
 1. Create API token (right top: Settings -> API keys)
+1. install the requirements
+```
+   python3 -m venv env
+   . ./env/bin/activate
+   pip install -r requirements.txt
+```
 1. use the token:
 ```
    ./beep.py --token <INSERT_TOKEN_VALUE> --url https://NAS
