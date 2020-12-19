@@ -31,15 +31,12 @@ zpool list -H -o health | while read state; do
 done
 ```
 
-## Alerting for all events via Python (TODO)
+## Alerting for all events via Python
 
 It is possible to get list of alerts via the RESTful API (https://www.truenas.com/docs/hub/additional-topics/api/rest_api/).
 
 1. Create API token (right top: Settings -> API keys)
 1. use the token:
 ```
-curl -s --insecure -L -X GET "http://nas.local.lab.devnull.cz/api/v2.0/alert/list" \
-    -H "accept: */*" -H "Authorization: Bearer XXX" | jq
+   ./beep.py --token <INSERT_TOKEN_VALUE> --url https://NAS
 ```
-
-Best to be done via Python `requests` module.
