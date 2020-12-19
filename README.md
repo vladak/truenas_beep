@@ -9,29 +9,15 @@
 1. `kldload speaker`
 1. `spkrtest`
 1. ensure the speaker module is loaded on every boot: `echo 'speaker_load="YES"' >> /boot/loader.conf`
-1. peruse `/usr/sbin/spkrtest` (shell script) can be used to test the speaker
+1. `/usr/sbin/spkrtest` (shell script) can be used to test the speaker
 
-## Alerting for ZFS via shell script
+## Alerting for all events via Python
 
 Create a simple script to play a melody ([spkr(4)](https://www.freebsd.org/cgi/man.cgi?query=spkr&apropos=0&sektion=0&manpath=FreeBSD+12.2-RELEASE+and+Ports&arch=default&format=html) has detailed guide how to play the device) whenever a resource fails (e.g. ZFS pool health).
 
-Add a cron job (via UI) to run the script as `root` (for write access to the `/dev/speaker` device - no need in this case to complicate this with delegating privileges to non-root user via `devfs`) once every hour
-
-The script:
-```shell
-#!/bin/sh
-
-speaker="/dev/speaker"
-music="msl16oldcd4mll8pcb-agf+4.g4p4<msl16dcd4mll8pa.a+f+4p16g4"
-
-zpool list -H -o health | while read state; do
-	if [ "x$state" != "xONLINE" ]; then
-		echo ${music} > ${speaker}
-	fi
-done
-```
-
-## Alerting for all events via Python
+Add a cron job (via UI) to run the script as `root` (for write access to the
+`/dev/speaker` device - no need in this case to complicate this with delegating
+privileges to non-root user via `devfs`) once every hour.
 
 It is possible to get list of alerts via the RESTful API (https://www.truenas.com/docs/hub/additional-topics/api/rest_api/).
 
