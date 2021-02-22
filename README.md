@@ -20,7 +20,7 @@ privileges to non-root user via `devfs`) once every hour.
 
 It is possible to get list of alerts via the RESTful API (https://www.truenas.com/docs/hub/additional-topics/api/rest_api/).
 
-1. Create API token (right top: Settings -> API keys)
+1. Create API token in the TrueNAS web UI (right top: Settings -> API keys)
 2. install the requirements
 ```
    python3 -m venv env
