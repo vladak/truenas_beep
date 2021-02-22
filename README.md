@@ -1,6 +1,8 @@
 
 # TrueNAS alerting via system beep
 
+For my home NAS I wanted to get a notification without relying on external system. Using system beeper made sense to me, however TrueNAS does not support that out of the box.
+
 # Getting speaker to work
 
 1. connect [PC speaker](https://en.wikipedia.org/wiki/PC_speaker) to the motherboard
