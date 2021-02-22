@@ -7,7 +7,6 @@
 1. download `kernel.txz` for the appropriate FreeBSD kernel version (https://download.freebsd.org/ftp/releases/amd64/)
 1. extract `/boot/kernel/speaker.ko`: `xz -dc kernel.txz | tar xvf -` (for some reason trying to extract individual file results in corrupted file with `Line too long` the error message emitted by `tar`)
 1. `kldload speaker`
-1. `spkrtest`
 1. ensure the speaker module is loaded on every boot: `echo 'speaker_load="YES"' >> /boot/loader.conf`
 1. `/usr/sbin/spkrtest` (shell script) can be used to test the speaker
 
