@@ -1,7 +1,7 @@
 
 # TrueNAS alerting via system beep
 
-For my home NAS I wanted to get a notification without relying on external system. Using system beeper made sense to me, however TrueNAS does not support that out of the box.
+For my home NAS I wanted to get a notification without relying on external system. Using system beeper made sense to me, however TrueNAS does not support that out of the box. This already did its job when one of the disks died.
 
 # Getting speaker to work
 
