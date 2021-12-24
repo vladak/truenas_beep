@@ -6,7 +6,7 @@ For my home NAS I wanted to get a notification without relying on external syste
 # Getting speaker to work
 
 1. connect [PC speaker](https://en.wikipedia.org/wiki/PC_speaker) to the motherboard
-1. download `kernel.txz` for the appropriate FreeBSD kernel version (https://download.freebsd.org/ftp/releases/amd64/)
+1. download `kernel.txz` for the **appropriate** FreeBSD kernel version (https://download.freebsd.org/ftp/releases/amd64/)
 1. extract `/boot/kernel/speaker.ko`: `xz -dc kernel.txz | tar xvf -` (for some reason trying to extract individual file results in corrupted file with `Line too long` the error message emitted by `tar`)
 1. `kldload speaker`
 1. ensure the speaker module is loaded on every boot: `echo 'speaker_load="YES"' >> /boot/loader.conf`
