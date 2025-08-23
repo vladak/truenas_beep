@@ -33,7 +33,7 @@ It is possible to get list of alerts via the RESTful API (https://www.truenas.co
 `/dev/speaker` device - no need in this case to complicate this with delegating
 privileges to non-root user via `devfs`) once every hour. The crontab entry can look like this:
 ```
-XXX
+@hourly /.../beep.py --token <INSERT_TOKEN_VALUE> --url http://localhost --noverify
 ```
 
 It would be much more convenient if the speaker could be listed as a Alert service in the TrueNAS GUI. Filed https://jira.ixsystems.com/browse/NAS-108740 to track this enhancement.
