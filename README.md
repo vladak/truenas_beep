@@ -16,10 +16,6 @@ For my home NAS I wanted to get a notification without relying on external syste
 
 Create a simple script to play a melody ([spkr(4)](https://www.freebsd.org/cgi/man.cgi?query=spkr&apropos=0&sektion=0&manpath=FreeBSD+12.2-RELEASE+and+Ports&arch=default&format=html) has detailed guide how to play the device) whenever a resource fails (e.g. ZFS pool health).
 
-Add a cron job (via UI) to run the script as `root` (for write access to the
-`/dev/speaker` device - no need in this case to complicate this with delegating
-privileges to non-root user via `devfs`) once every hour.
-
 It is possible to get list of alerts via the RESTful API (https://www.truenas.com/docs/hub/additional-topics/api/rest_api/).
 
 1. Create API token in the TrueNAS web UI (right top: Settings -> API keys)
@@ -29,9 +25,15 @@ It is possible to get list of alerts via the RESTful API (https://www.truenas.co
    . ./env/bin/activate
    pip install -r requirements.txt
 ```
-3. use the token:
+3. test the token:
 ```
    sudo ./beep.py --token <INSERT_TOKEN_VALUE> --url https://NAS
+```
+4. Add a cron job (via UI) to run the script as `root` (for write access to the
+`/dev/speaker` device - no need in this case to complicate this with delegating
+privileges to non-root user via `devfs`) once every hour. The crontab entry can look like this:
+```
+XXX
 ```
 
 It would be much more convenient if the speaker could be listed as a Alert service in the TrueNAS GUI. Filed https://jira.ixsystems.com/browse/NAS-108740 to track this enhancement.
