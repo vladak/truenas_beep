@@ -12,10 +12,6 @@ For my home NAS I wanted to get a notification without relying on external syste
 1. ensure the speaker module is loaded on every boot: `echo 'speaker_load="YES"' >> /boot/loader.conf.d/speaker.conf`
 1. `/usr/sbin/spkrtest` (shell script) can be used to test the speaker
 
-## Udating
-
-Whenever updating TrueNAS it is prudent to also update the `speaker.ko` kernel module from matching kernel archive, otherwise it may fail to load due to version checks etc.
-
 # Alerting for all events via Python
 
 Create a simple script to play a melody ([spkr(4)](https://www.freebsd.org/cgi/man.cgi?query=spkr&apropos=0&sektion=0&manpath=FreeBSD+12.2-RELEASE+and+Ports&arch=default&format=html) has detailed guide how to play the device) whenever a resource fails (e.g. ZFS pool health).
@@ -39,3 +35,9 @@ It is possible to get list of alerts via the RESTful API (https://www.truenas.co
 ```
 
 It would be much more convenient if the speaker could be listed as a Alert service in the TrueNAS GUI. Filed https://jira.ixsystems.com/browse/NAS-108740 to track this enhancement.
+
+# Udating
+
+Whenever updating TrueNAS it is prudent to also update the `speaker.ko` kernel module from matching kernel archive, otherwise it may fail to load due to version checks etc.
+
+Same goes for the `root` crontab entry.
